@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ValleNetwork</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #050b14;
+            color: white;
+        }
+
+
+        /* =========================
+           ENCABEZADO
+        ========================= */
+
+        header {
+            height: 85px;
+            background: #071321;
+            display: flex;
+            align-items: center;
+            padding: 0 7%;
+            border-bottom: 1px solid #1264a3;
+            box-shadow: 0 0 25px rgba(0, 123, 255, 0.15);
+        }
+
+        header h1 {
+            margin: 0;
+            color: #2196f3;
+            font-size: 36px;
+            letter-spacing: 1px;
+            text-shadow: 0 0 15px rgba(33, 150, 243, 0.5);
+        }
+
+
+        /* =========================
+           PANTALLA INTERNET
+        ========================= */
+
+        .internet {
+            min-height: 650px;
+            padding: 70px 8%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background:
+                radial-gradient(circle at 20% 40%,
+                rgba(0, 123, 255, 0.18),
+                transparent 35%),
+
+                radial-gradient(circle at 80% 70%,
+                rgba(0, 81, 150, 0.15),
+                transparent 35%),
+
+                #071321;
+        }
+
+
+        .internet-contenido {
+            width: 100%;
+            max-width: 1150px;
+        }
+
+
+        .titulo-seccion {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+
+        .titulo-seccion h2 {
+            font-size: 42px;
+            margin: 0 0 12px;
+            color: white;
+            letter-spacing: 1px;
+        }
+
+
+        .titulo-seccion h2 span {
+            color: #2196f3;
+            text-shadow: 0 0 18px rgba(33, 150, 243, 0.5);
+        }
+
+
+        .titulo-seccion p {
+            margin: 0;
+            color: #9eb2c8;
+            font-size: 18px;
+        }
+
+
+        /* TARJETA PRINCIPAL */
+
+        .paquete {
+            position: relative;
+            overflow: hidden;
+
+            max-width: 900px;
+            margin: auto;
+
+            padding: 45px;
+
+            border-radius: 25px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #102b47,
+                    #091a2d
+                );
+
+            border: 1px solid #167bd1;
+
+            box-shadow:
+                0 0 35px rgba(0, 123, 255, 0.22),
+                inset 0 0 30px rgba(0, 123, 255, 0.04);
+        }
+
+
+        /* CÍRCULOS DECORATIVOS */
+
+        .paquete::before {
+            content: "";
+            position: absolute;
+
+            width: 220px;
+            height: 220px;
+
+            border-radius: 50%;
+
+            border: 35px solid rgba(33, 150, 243, 0.08);
+
+            right: -70px;
+            top: -70px;
+        }
+
+
+        .paquete::after {
+            content: "";
+            position: absolute;
+
+            width: 130px;
+            height: 130px;
+
+            border-radius: 50%;
+
+            background: rgba(0, 123, 255, 0.05);
+
+            left: -50px;
+            bottom: -50px;
+        }
+
+
+        .paquete-contenido {
+            position: relative;
+            z-index: 2;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 45px;
+
+            align-items: center;
+        }
+
+
+        /* INFORMACIÓN */
+
+        .paquete-info h3 {
+            color: #55b6ff;
+            font-size: 28px;
+            margin-top: 0;
+            margin-bottom: 18px;
+        }
+
+
+        .paquete-info p {
+            color: #c5d4e3;
+            font-size: 17px;
+            line-height: 1.7;
+        }
+
+
+        /* VELOCIDAD */
+
+        .velocidad-box {
+            text-align: center;
+
+            padding: 30px;
+
+            border-radius: 20px;
+
+            background: rgba(3, 12, 23, 0.65);
+
+            border: 1px solid #1c8bea;
+
+            box-shadow:
+                0 0 25px rgba(0, 123, 255, 0.15);
+        }
+
+
+        .velocidad {
+            font-size: 75px;
+            font-weight: bold;
+
+            color: #2196f3;
+
+            line-height: 1;
+
+            text-shadow:
+                0 0 20px rgba(33, 150, 243, 0.5);
+        }
+
+
+        .mbps {
+            font-size: 20px;
+            color: #b7dfff;
+            margin-top: 10px;
+            letter-spacing: 4px;
+        }
+
+
+        .rf {
+            display: inline-block;
+
+            margin-top: 22px;
+
+            padding: 8px 20px;
+
+            border-radius: 30px;
+
+            background: #0c5fa1;
+
+            color: white;
+
+            font-weight: bold;
+
+            letter-spacing: 1px;
+        }
+
+
+        /* BENEFICIOS */
+
+        .beneficios {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            gap: 12px;
+
+            margin-top: 25px;
+        }
+
+
+        .beneficio {
+            padding: 12px;
+
+            background: rgba(255, 255, 255, 0.04);
+
+            border-radius: 10px;
+
+            color: #c7d7e8;
+
+            font-size: 15px;
+        }
+
+
+        /* =========================
+           INSTALACIÓN
+        ========================= */
+
+        .instalacion-seccion {
+            min-height: 650px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 70px 8%;
+
+            background:
+                radial-gradient(
+                    circle at 80% 40%,
+                    rgba(0, 123, 255, 0.18),
+                    transparent 35%
+                ),
+
+                #050b14;
+        }
+
+
+        .instalacion-contenido {
+            width: 100%;
+            max-width: 1100px;
+        }
+
+
+        .instalacion-titulo {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+
+        .instalacion-titulo h2 {
+            font-size: 42px;
+            margin: 0 0 10px;
+
+            color: #2196f3;
+        }
+
+
+        .instalacion-titulo p {
+            color: #9eb2c8;
+            font-size: 18px;
+        }
+
+
+        .instalacion-card {
+            max-width: 900px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: 0.9fr 1.1fr;
+
+            overflow: hidden;
+
+            border-radius: 25px;
+
+            background: #0b1b2d;
+
+            border: 1px solid #145d94;
+
+            box-shadow:
+                0 0 40px rgba(0, 123, 255, 0.18);
+        }
+
+
+        /* LADO DEL ICONO */
+
+        .instalacion-icono {
+            min-height: 400px;
+
+            display: flex;
+            flex-direction: column;
+
+            align-items: center;
+            justify-content: center;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #0d4d80,
+                    #071626
+                );
+
+            border-right: 1px solid #155d92;
+        }
+
+
+        .antena {
+            width: 150px;
+            height: 150px;
+
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 70px;
+
+            background: rgba(0, 123, 255, 0.12);
+
+            border: 2px solid #2196f3;
+
+            box-shadow:
+                0 0 30px rgba(33, 150, 243, 0.3);
+        }
+
+
+        .instalacion-icono h3 {
+            margin-top: 25px;
+
+            color: white;
+
+            font-size: 25px;
+        }
+
+
+        /* INFORMACIÓN INSTALACIÓN */
+
+        .instalacion-info {
+            padding: 50px;
+        }
+
+
+        .instalacion-info h3 {
+            margin-top: 0;
+
+            color: #55b6ff;
+
+            font-size: 30px;
+        }
+
+
+        .instalacion-info p {
+            color: #c4d2df;
+
+            line-height: 1.7;
+
+            font-size: 17px;
+        }
+
+
+        .precio-box {
+            margin: 30px 0;
+
+            padding: 20px;
+
+            border-radius: 15px;
+
+            background: #071321;
+
+            border: 1px solid #1a78c1;
+
+            text-align: center;
+        }
+
+
+        .precio-label {
+            color: #9eb2c8;
+
+            font-size: 15px;
+        }
+
+
+        .precio {
+            font-size: 55px;
+
+            font-weight: bold;
+
+            color: #2196f3;
+
+            text-shadow:
+                0 0 20px rgba(33, 150, 243, 0.4);
+        }
+
+
+        .incluye {
+            color: #55b6ff;
+
+            font-weight: bold;
+
+            margin-top: 25px;
+        }
+
+
+        .lista {
+            list-style: none;
+
+            padding: 0;
+
+            margin: 15px 0 0;
+        }
+
+
+        .lista li {
+            margin: 12px 0;
+
+            color: #c7d7e8;
+
+            font-size: 16px;
+        }
+
+
+        .lista li::before {
+            content: "✓";
+
+            color: #2196f3;
+
+            font-weight: bold;
+
+            margin-right: 10px;
+        }
+
+
+        /* =========================
+           BOTÓN
+        ========================= */
+
+        .boton {
+            display: inline-block;
+
+            margin-top: 25px;
+
+            padding: 14px 28px;
+
+            border-radius: 10px;
+
+            background: #007bff;
+
+            color: white;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+
+            box-shadow:
+                0 0 15px rgba(0, 123, 255, 0.25);
+        }
+
+
+        .boton:hover {
+            background: #168fff;
+
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 0 25px rgba(0, 123, 255, 0.5);
+        }
+
+
+        /* =========================
+           PIE DE PÁGINA
+        ========================= */
+
+        footer {
+            background: #03070d;
+
+            text-align: center;
+
+            padding: 35px 20px;
+
+            border-top: 1px solid #10456f;
+
+            color: #8297ac;
+        }
+
+
+        footer strong {
+            color: #2196f3;
+        }
+
+
+        .contacto {
+            margin-top: 20px;
+        }
+
+
+        .contacto p {
+            margin: 10px 0;
+
+            font-size: 16px;
+        }
+
+
+        .contacto a {
+            color: #b7dfff;
+
+            text-decoration: none;
+
+            transition: 0.3s;
+        }
+
+
+        .contacto a:hover {
+            color: #2196f3;
+
+            text-shadow:
+                0 0 10px rgba(33, 150, 243, 0.5);
+        }
+
+
+        .copyright {
+            margin-top: 25px;
+
+            padding-top: 20px;
+
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           CELULAR
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            header {
+                height: 75px;
+
+                padding: 0 25px;
+            }
+
+
+            header h1 {
+                font-size: 30px;
+            }
+
+
+            .internet,
+            .instalacion-seccion {
+                padding: 55px 20px;
+            }
+
+
+            .titulo-seccion h2,
+            .instalacion-titulo h2 {
+                font-size: 32px;
+            }
+
+
+            .paquete {
+                padding: 25px;
+            }
+
+
+            .paquete-contenido {
+                grid-template-columns: 1fr;
+
+                gap: 25px;
+            }
+
+
+            .velocidad {
+                font-size: 60px;
+            }
+
+
+            .instalacion-card {
+                grid-template-columns: 1fr;
+            }
+
+
+            .instalacion-icono {
+                min-height: 280px;
+
+                border-right: none;
+
+                border-bottom: 1px solid #155d92;
+            }
+
+
+            .instalacion-info {
+                padding: 30px 25px;
+            }
+
+
+            .beneficios {
+                grid-template-columns: 1fr;
+            }
+
+
+            .contacto p {
+                font-size: 14px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         ENCABEZADO
+    ========================= -->
+
+    <header>
+
+        <h1>ValleNetwork</h1>
+
+    </header>
+
+
+
+    <!-- =========================
+         INTERNET PARA TU HOGAR
+    ========================= -->
+
+    <section class="internet">
+
+        <div class="internet-contenido">
+
+
+            <div class="titulo-seccion">
+
+                <h2>
+                    INTERNET <span>PARA TU HOGAR</span>
+                </h2>
+
+                <p>
+                    Conectividad confiable para mantener tu hogar conectado.
+                </p>
+
+            </div>
+
+
+
+            <div class="paquete">
+
+                <div class="paquete-contenido">
+
+
+                    <!-- INFORMACIÓN -->
+
+                    <div class="paquete-info">
+
+                        <h3>
+                            PAQUETE RF
+                        </h3>
+
+                        <p>
+                            Servicio de Internet mediante radiofrecuencia,
+                            diseñado para ofrecer una cobertura amplia
+                            y atención local.
+                        </p>
+
+
+                        <div class="beneficios">
+
+                            <div class="beneficio">
+                                📶 Conexión estable
+                            </div>
+
+                            <div class="beneficio">
+                                🏠 Servicio para hogar
+                            </div>
+
+                            <div class="beneficio">
+                                ⚡ Navegación rápida
+                            </div>
+
+                            <div class="beneficio">
+                                📡 Tecnología RF
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- VELOCIDAD -->
+
+                    <div class="velocidad-box">
+
+                        <div class="velocidad">
+                            10
+                        </div>
+
+                        <div class="mbps">
+                            Mbps
+                        </div>
+
+                        <div class="rf">
+                            PAQUETE RF
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         INSTALACIÓN PROFESIONAL
+    ========================= -->
+
+    <section class="instalacion-seccion">
+
+        <div class="instalacion-contenido">
+
+
+            <div class="instalacion-titulo">
+
+                <h2>
+                    SERVICIO DE INSTALACIÓN
+                </h2>
+
+                <p>
+                    Instalación profesional para comenzar a disfrutar
+                    tu conexión ValleNetwork.
+                </p>
+
+            </div>
+
+
+
+            <div class="instalacion-card">
+
+
+                <!-- ICONO -->
+
+                <div class="instalacion-icono">
+
+                    <div class="antena">
+                        📡
+                    </div>
+
+                    <h3>
+                        Instalación profesional
+                    </h3>
+
+                </div>
+
+
+
+                <!-- INFORMACIÓN -->
+
+                <div class="instalacion-info">
+
+                    <h3>
+                        Instalación Profesional
+                    </h3>
+
+                    <p>
+                        Nuestro equipo realiza la instalación de tu
+                        servicio ValleNetwork de manera profesional,
+                        buscando que tu conexión quede correctamente
+                        configurada.
+                    </p>
+
+
+                    <div class="precio-box">
+
+                        <div class="precio-label">
+                            COSTO DE INSTALACIÓN
+                        </div>
+
+                        <div class="precio">
+                            $2000
+                        </div>
+
+                        <div class="precio-label">
+                            MXN
+                        </div>
+
+                    </div>
+
+
+                    <div class="incluye">
+                        LA INSTALACIÓN INCLUYE:
+                    </div>
+
+
+                    <ul class="lista">
+
+                        <li>
+                            Instalación del servicio
+                        </li>
+
+                        <li>
+                            Configuración inicial
+                        </li>
+
+                        <li>
+                            Revisión de conexión
+                        </li>
+
+                        <li>
+                            Atención profesional
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         PIE DE PÁGINA
+    ========================= -->
+
+    <footer>
+
+        <p>
+            <strong>ValleNetwork</strong>
+        </p>
+
+
+        <div class="contacto">
+
+            <p>
+                📞 <strong>Cel:</strong>
+                <a href="tel:+526188235926">
+                    618 823 5926
+                </a>
+            </p>
+
+
+            <p>
+                ✉️ <strong>Correos:</strong>
+                <a href="mailto:vallenetoficina2025@gmail.com">
+                    vallenetoficina2025@gmail.com / vallenetadmon@gmail.com
+                </a>
+            </p>
+
+
+
+
+    </footer>
+
+
+</body>
+</html>
+
+
