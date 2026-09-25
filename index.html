@@ -23,12 +23,6 @@
             color: white;
             overflow-x: hidden;
         }
-
-
-        /* =========================
-           ANIMACIONES GENERALES
-        ========================= */
-
         @keyframes aparecer {
             from {
                 opacity: 0;
@@ -66,8 +60,6 @@
                     0 0 40px rgba(33, 150, 243, 0.45);
             }
         }
-
-
         @keyframes antenaPulso {
             0%, 100% {
                 transform: scale(1);
@@ -81,8 +73,6 @@
                     0 0 45px rgba(33, 150, 243, 0.65);
             }
         }
-
-
         @keyframes onda {
             0% {
                 transform: scale(0.8);
@@ -94,8 +84,6 @@
                 opacity: 0;
             }
         }
-
-
         @keyframes subir {
             from {
                 opacity: 0;
@@ -107,11 +95,6 @@
                 transform: translateY(0);
             }
         }
-
-
-        /* =========================
-           ENCABEZADO
-        ========================= */
 
         header {
             height: 85px;
@@ -139,11 +122,6 @@
 
             animation: brillo 3s infinite;
         }
-
-
-        /* =========================
-           PANTALLA INTERNET
-        ========================= */
 
         .internet {
             min-height: 650px;
@@ -207,11 +185,6 @@
             font-size: 18px;
         }
 
-
-        /* =========================
-           TARJETA PRINCIPAL
-        ========================= */
-
         .paquete {
             position: relative;
             overflow: hidden;
@@ -254,9 +227,6 @@
                 0 15px 45px rgba(0, 123, 255, 0.35),
                 inset 0 0 35px rgba(0, 123, 255, 0.06);
         }
-
-
-        /* CÍRCULOS DECORATIVOS */
 
         .paquete::before {
             content: "";
@@ -318,11 +288,6 @@
             align-items: center;
         }
 
-
-        /* =========================
-           INFORMACIÓN
-        ========================= */
-
         .paquete-info h3 {
             color: #55b6ff;
             font-size: 28px;
@@ -348,11 +313,6 @@
             font-size: 17px;
             line-height: 1.7;
         }
-
-
-        /* =========================
-           VELOCIDAD
-        ========================= */
 
         .velocidad-box {
             text-align: center;
@@ -439,11 +399,6 @@
                 0 0 20px rgba(33, 150, 243, 0.5);
         }
 
-
-        /* =========================
-           BENEFICIOS
-        ========================= */
-
         .beneficios {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -487,11 +442,6 @@
 
             color: white;
         }
-
-
-        /* =========================
-           INSTALACIÓN
-        ========================= */
 
         .instalacion-seccion {
             min-height: 650px;
@@ -543,11 +493,6 @@
             font-size: 18px;
         }
 
-
-        /* =========================
-           TARJETA INSTALACIÓN
-        ========================= */
-
         .instalacion-card {
             max-width: 900px;
 
@@ -585,11 +530,6 @@
             box-shadow:
                 0 15px 50px rgba(0, 123, 255, 0.3);
         }
-
-
-        /* =========================
-           LADO DEL ICONO
-        ========================= */
 
         .instalacion-icono {
             min-height: 400px;
@@ -703,11 +643,6 @@
                 0 0 15px rgba(255, 255, 255, 0.3);
         }
 
-
-        /* =========================
-           INFORMACIÓN INSTALACIÓN
-        ========================= */
-
         .instalacion-info {
             padding: 50px;
         }
@@ -742,10 +677,6 @@
             font-size: 17px;
         }
 
-
-        /* =========================
-           PRECIO
-        ========================= */
 
         .precio-box {
             margin: 30px 0;
@@ -845,12 +776,6 @@
 
             margin-right: 10px;
         }
-
-
-        /* =========================
-           BOTÓN
-        ========================= */
-
         .boton {
             display: inline-block;
 
@@ -884,12 +809,6 @@
             box-shadow:
                 0 0 25px rgba(0, 123, 255, 0.5);
         }
-
-
-        /* =========================
-           PIE DE PÁGINA
-        ========================= */
-
         footer {
             background: #03070d;
 
@@ -951,11 +870,6 @@
 
             font-size: 14px;
         }
-
-
-        /* =========================
-           CELULAR
-        ========================= */
 
         @media (max-width: 800px) {
 
@@ -1031,11 +945,6 @@
         }
 
 
-        /* =========================
-           REDUCIR ANIMACIONES
-           SI EL USUARIO LO PREFIERE
-        ========================= */
-
         @media (prefers-reduced-motion: reduce) {
 
             *,
@@ -1048,9 +957,6 @@
             }
 
         }
-
-
-        /* HOVERS PROFESIONALES */
         header { position: relative; transition: box-shadow .35s ease, background .35s ease; }
         header::after {
             content:""; position:absolute; left:7%; bottom:-1px; width:0; height:2px;
@@ -1188,21 +1094,12 @@
 <body>
 
 
-    <!-- =========================
-         ENCABEZADO
-    ========================= -->
-
     <header>
 
         <h1>ValleNetwork</h1>
 
     </header>
 
-
-
-    <!-- =========================
-         INTERNET PARA TU HOGAR
-    ========================= -->
 
     <section class="internet">
 
@@ -1228,7 +1125,7 @@
                 <div class="paquete-contenido">
 
 
-                    <!-- INFORMACIÓN -->
+                 
 
                     <div class="paquete-info">
 
@@ -1265,10 +1162,6 @@
 
                     </div>
 
-
-
-                    <!-- VELOCIDAD -->
-
                     <div class="velocidad-box">
 
                         <div class="velocidad">
@@ -1295,11 +1188,6 @@
     </section>
 
 
-
-    <!-- =========================
-         INSTALACIÓN PROFESIONAL
-    ========================= -->
-
     <section class="instalacion-seccion">
 
         <div class="instalacion-contenido">
@@ -1322,9 +1210,6 @@
 
             <div class="instalacion-card">
 
-
-                <!-- ICONO -->
-
                 <div class="instalacion-icono">
 
                     <div class="antena">
@@ -1337,9 +1222,6 @@
 
                 </div>
 
-
-
-                <!-- INFORMACIÓN -->
 
                 <div class="instalacion-info">
 
@@ -1404,12 +1286,6 @@
         </div>
 
     </section>
-
-
-
-    <!-- =========================
-         PIE DE PÁGINA
-    ========================= -->
 
     <footer>
 
